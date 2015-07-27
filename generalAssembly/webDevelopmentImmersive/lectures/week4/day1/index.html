@@ -1,0 +1,31 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>AJAX </title>
+</head>
+    <p>We're going to hit this url: <a href="http://www.omdbapi.com/?t=home+alone&y=&plot=full&tomatoes=true&r=json">http://www.omdbapi.com/?t=home+alone&y=&plot=full&tomatoes=true&r=json</a></p>
+
+    <div id="Title"></div>
+    <div id="Year"></div>
+    <div id="Rated"></div>
+    <div id="Plot"></div>
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+          url: 'http://www.omdbapi.com/?t=home+alone&y=&plot=full&r=json',
+          method: "GET"
+        }).done(function(data) {
+            //do stuff here
+            $("#Title").append(data.Title);
+            debugger;
+            $("#Year").append(data.Year);
+            $("#Rated").append(data.Rated);
+            $("#Plot").append(data.Plot);
+
+        })
+    </script>
+</body>
+</html>
+var userInput = whatever the user typed
+<a href="http://www.omdbapi.com/?t=" + userInput + "&y=&plot=full&r=json">
